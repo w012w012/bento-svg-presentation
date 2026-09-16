@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <pattern id="dotGrid6" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#1E293B" opacity="0.6"/>
+    </pattern>
+    <linearGradient id="conclusionGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="cardGrad6" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#111A2E"/>
+      <stop offset="100%" stop-color="#090E1A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="1280" height="720" fill="#070C18"/>
+  <rect width="1280" height="720" fill="url(#dotGrid6)"/>
+
+  <!-- 顶部 Header -->
+  <g transform="translate(60, 35)">
+    <rect x="0" y="4" width="4" height="32" rx="2" fill="url(#conclusionGrad)"/>
+    <text x="16" y="30" fill="#F8FAFC" font-size="28" font-family="system-ui, -apple-system, sans-serif" font-weight="700">
+      总结与行动决议：守正出奇，全渠道货盘协同破局
+    </text>
+    <text x="16" y="58" fill="#94A3B8" font-size="14" font-family="system-ui, sans-serif"><tspan x="16" dy="0">明确各渠道战略定位 · 以京东为盾守住利</tspan><tspan x="16" dy="20">润，以抖音为矛快速测款，以天猫重构打赢翻</tspan><tspan x="16" dy="20">身仗</tspan></text>
+  </g>
+
+  <!-- 主体三列 Bento 卡片 (三栏布局: 375 x 430) -->
+
+  <!-- 决议 1: 京东基本盘 -->
+  <g transform="translate(60, 115)">
+    <rect width="366" height="425" rx="16" fill="url(#cardGrad6)" stroke="#1E293B" stroke-width="1"/>
+    <rect x="0" y="0" width="366" height="4" rx="2" fill="#0284C7"/>
+    
+    <rect x="24" y="24" width="80" height="24" rx="6" fill="#0369A1" opacity="0.4"/>
+    <text x="34" y="40" fill="#38BDF8" font-size="12" font-family="system-ui, sans-serif" font-weight="700">利润压舱石</text>
+    <text x="24" y="85" fill="#F8FAFC" font-size="22" font-family="system-ui, sans-serif" font-weight="700">坚决守住京东基本盘</text>
+    <text x="24" y="112" fill="#94A3B8" font-size="13" font-family="system-ui, sans-serif">确保 48% 全盘销售额与现金流稳定</text>
+    
+    <line x1="24" y1="130" x2="342" y2="130" stroke="#1E293B" stroke-width="1"/>
+    
+    <g transform="translate(24, 145)">
+      <text x="0" y="20" fill="#E2E8F0" font-size="14" font-family="system-ui, sans-serif" font-weight="600">行动要点 01：</text>
+      <text x="0" y="44" fill="#94A3B8" font-size="13" font-family="system-ui, sans-serif"><tspan x="0" dy="0">强化自营对 DY50 与旗舰 DY50 </tspan><tspan x="0" dy="20">PRO 的核心锁定，抓紧以旧换新国补窗口</tspan><tspan x="0" dy="20">期。</tspan></text>
+
+      <text x="0" y="95" fill="#E2E8F0" font-size="14" font-family="system-ui, sans-serif" font-weight="600">行动要点 02：</text>
+      <text x="0" y="119" fill="#94A3B8" font-size="13" font-family="system-ui, sans-serif"><tspan x="0" dy="0">利用京东 POP 店铺作为溢出与特定机型</tspan><tspan x="0" dy="20">（如 DY66）承接地，提升整体出货毛利</tspan><tspan x="0" dy="20">率。</tspan></text>
+
+      <text x="0" y="170" fill="#E2E8F0" font-size="14" font-family="system-ui, sans-serif" font-weight="600">行动要点 03：</text>
+      <text x="0" y="194" fill="#94A3B8" font-size="13" font-family="system-ui, sans-serif">优化前置仓与送装一体化评价，筑牢服务壁垒。</text>
+    </g>
+  </g>
+
+  <!-- 决议 2: 天猫翻身仗 (核心聚焦) -->
+  <g transform="translate(456, 115)">
+    <rect width="366" height="425" rx="16" fill="url(#cardGrad6)" stroke="#10B981" stroke-width="1.4"/>
+    <rect x="0" y="0" width="366" height="4" rx="2" fill="#10B981"/>
+    
+    <rect x="24" y="24" width="80" height="24" rx="6" fill="#064E3B"/>
+    <text x="34" y="40" fill="#34D399" font-size="12" font-family="system-ui, sans-serif" font-weight="700">战略突击点</text>
+    <text x="24" y="85" fill="#F8FAFC" font-size="22" font-family="system-ui, sans-serif" font-weight="700">全力打赢天猫翻身仗</text>
+    <text x="24" y="112" fill="#34D399" font-size="13" font-family="system-ui, sans-serif">目标：30 天内月销拉升至 260 台以上</text>
+    
+    <line x1="24" y1="130" x2="342" y2="130" stroke="#1E293B" stroke-width="1"/>
+    
+    <g transform="translate(24, 145)">
+      <text x="0" y="20" fill="#E2E8F0" font-size="14" font-family="system-ui, sans-serif" font-weight="600">行动要点 01：</text>
+      <text x="0" y="44" fill="#94A3B8" font-size="13" font-family="system-ui, sans-serif"><tspan x="0" dy="0">下周前完成 DY66 与 DY50 上架</tspan><tspan x="0" dy="20">铺货，打破 PY50 孤立无援局面，构建</tspan><tspan x="0" dy="20">腰部阵地。</tspan></text>
+
+      <text x="0" y="95" fill="#E2E8F0" font-size="14" font-family="system-ui, sans-serif" font-weight="600">行动要点 02：</text>
+      <text x="0" y="119" fill="#94A3B8" font-size="13" font-family="system-ui, sans-serif"><tspan x="0" dy="0">重构天猫详情页与赠品体系，推行“主机+延</tspan><tspan x="0" dy="20">保+烘焙礼盒”套餐，彻底甩开裸机比价。</tspan></text>
+
+      <text x="0" y="170" fill="#E2E8F0" font-size="14" font-family="system-ui, sans-serif" font-weight="600">行动要点 03：</text>
+      <text x="0" y="194" fill="#94A3B8" font-size="13" font-family="system-ui, sans-serif"><tspan x="0" dy="0">以 DY20 重启付费搜索防守词，拉动全</tspan><tspan x="0" dy="20">店权重。</tspan></text>
+    </g>
+  </g>
+
+  <!-- 决议 3: PDD与抖音规范治理 -->
+  <g transform="translate(852, 115)">
+    <rect width="368" height="425" rx="16" fill="url(#cardGrad6)" stroke="#1E293B" stroke-width="1"/>
+    <rect x="0" y="0" width="368" height="4" rx="2" fill="#F59E0B"/>
+    
+    <rect x="24" y="24" width="80" height="24" rx="6" fill="#78350F" opacity="0.6"/>
+    <text x="34" y="40" fill="#FBBF24" font-size="12" font-family="system-ui, sans-serif" font-weight="700">治理防护网</text>
+    <text x="24" y="85" fill="#F8FAFC" font-size="22" font-family="system-ui, sans-serif" font-weight="700">规范 PDD 与抖音货盘</text>
+    <text x="24" y="112" fill="#94A3B8" font-size="13" font-family="system-ui, sans-serif">严格防范全网价格穿透与售后反噬</text>
+    
+    <line x1="24" y1="130" x2="344" y2="130" stroke="#1E293B" stroke-width="1"/>
+    
+    <g transform="translate(24, 145)">
+      <text x="0" y="20" fill="#E2E8F0" font-size="14" font-family="system-ui, sans-serif" font-weight="600">行动要点 01：</text>
+      <text x="0" y="44" fill="#94A3B8" font-size="13" font-family="system-ui, sans-serif"><tspan x="0" dy="0">拼多多严格执行特定专供 SKU / 尾货</tspan><tspan x="0" dy="20">代码，绝不允许旗舰机型低价裸奔破价。</tspan></text>
+
+      <text x="0" y="95" fill="#E2E8F0" font-size="14" font-family="system-ui, sans-serif" font-weight="600">行动要点 02：</text>
+      <text x="0" y="119" fill="#94A3B8" font-size="13" font-family="system-ui, sans-serif"><tspan x="0" dy="0">抖音延续 Y6/DY66 场景化爆款模式</tspan><tspan x="0" dy="20">，加大减脂脱盐等痛点内容输出，放大外溢效</tspan><tspan x="0" dy="20">应。</tspan></text>
+
+      <text x="0" y="170" fill="#E2E8F0" font-size="14" font-family="system-ui, sans-serif" font-weight="600">行动要点 03：</text>
+      <text x="0" y="194" fill="#94A3B8" font-size="13" font-family="system-ui, sans-serif">强化全渠道价格监控，建立破价实时预警机制。</text>
+    </g>
+  </g>
+
+  <!-- 底部里程碑行动横幅 (宽 1160, 高 85) -->
+  <g transform="translate(60, 560)">
+    <rect width="1160" height="85" rx="12" fill="#0B1120" stroke="#1E293B" stroke-width="1"/>
+    <text x="28" y="32" fill="#F8FAFC" font-size="15" font-family="system-ui, sans-serif" font-weight="700">后续执行时间表 (Milestones)：</text>
+    
+    <g transform="translate(28, 48)">
+      <circle cx="6" cy="10" r="4" fill="#06B6D4"/>
+      <text x="18" y="15" fill="#CBD5E1" font-size="13" font-family="system-ui, sans-serif"><tspan fill="#38BDF8" font-weight="600">第 1 周：</tspan>天猫完成 DY66 / DY50 货盘回补与上架测款</text>
+
+      <circle cx="390" cy="10" r="4" fill="#10B981"/>
+      <text x="402" y="15" fill="#CBD5E1" font-size="13" font-family="system-ui, sans-serif"><tspan fill="#34D399" font-weight="600">第 2 周：</tspan>天猫上线专属权益烘焙礼盒，启动搜索防守投放</text>
+
+      <circle cx="790" cy="10" r="4" fill="#F59E0B"/>
+      <text x="802" y="15" fill="#CBD5E1" font-size="13" font-family="system-ui, sans-serif"><tspan fill="#FBBF24" font-weight="600">第 4 周：</tspan>复盘天猫新货盘动销与全盘利润率变动</text>
+    </g>
+  </g>
+</svg>

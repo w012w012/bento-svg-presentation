@@ -1,0 +1,39 @@
+<!--
+  bento_defs_template.svg - 标准顶级质感基础定义
+  可在生成 SVG 时直接作为 <defs> 模板注入，确保光影、网格与滤镜一致性
+-->
+<defs>
+  <!-- 1. 数字化正方形网格底纹 (Tech Grid) -->
+  <pattern id="techGrid" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+    <path d="M 28 0 L 0 0 0 28" fill="none" stroke="#1E293B" stroke-width="0.8" stroke-opacity="0.3"/>
+  </pattern>
+
+  <!-- 2. 核心品牌强调色渐变 (电光青 -> 湖蓝) -->
+  <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#00F2FE"/>
+    <stop offset="100%" stop-color="#0284C7"/>
+  </linearGradient>
+
+  <!-- 3. 卡片表面细腻深度渐变 (暗黑微透) -->
+  <linearGradient id="cardSurface" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#111827" stop-opacity="0.85"/>
+    <stop offset="100%" stop-color="#0B1120" stop-opacity="0.95"/>
+  </linearGradient>
+
+  <!-- 4. 高级灰微光卡片表面 -->
+  <linearGradient id="cardElevated" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#1E293B" stop-opacity="0.6"/>
+    <stop offset="100%" stop-color="#0F172A" stop-opacity="0.8"/>
+  </linearGradient>
+
+  <!-- 5. 强调色外发光滤镜 (Glow Effect) -->
+  <filter id="accentGlow" x="-20%" y="-20%" width="140%" height="140%">
+    <feGaussianBlur stdDeviation="6" result="blur"/>
+    <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+  </filter>
+
+  <!-- 6. 幽暗投影滤镜 (Card Shadow) -->
+  <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+    <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.6"/>
+  </filter>
+</defs>

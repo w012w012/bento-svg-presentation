@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <!-- 背景微弱点阵纹理 -->
+    <pattern id="dotGrid" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#1E293B" opacity="0.6"/>
+    </pattern>
+    <!-- 核心渐变 -->
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06B6D4"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="cardBgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#131C2E" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0B1120" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="alertGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EF4444"/>
+      <stop offset="100%" stop-color="#F97316"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 全局背景 -->
+  <rect width="1280" height="720" fill="#070C18"/>
+  <rect width="1280" height="720" fill="url(#dotGrid)"/>
+
+  <!-- 顶部装饰光条 -->
+  <rect x="0" y="0" width="1280" height="3" fill="url(#primaryGrad)"/>
+
+  <!-- 主卡片 (Hero Card): 居中深色容器 -->
+  <rect x="60" y="50" width="1160" height="620" rx="20" fill="url(#cardBgGrad)" stroke="#1E293B" stroke-width="1.5"/>
+
+  <!-- 内部装饰光晕与标签 -->
+  <rect x="110" y="100" width="160" height="30" rx="15" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+  <circle cx="125" cy="115" r="4" fill="#06B6D4"/>
+  <text x="138" y="120" fill="#94A3B8" font-size="12" font-family="system-ui, -apple-system, sans-serif" font-weight="600" letter-spacing="1">内部经营决策报告</text>
+
+  <rect x="285" y="100" width="130" height="30" rx="15" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+  <text x="302" y="120" fill="#38BDF8" font-size="12" font-family="system-ui, -apple-system, sans-serif" font-weight="600">微蒸烤品类·月度</text>
+
+  <!-- 主标题 (大字号、强对比) -->
+  <text x="110" y="210" fill="#F8FAFC" font-size="52" font-family="system-ui, -apple-system, sans-serif" font-weight="800" letter-spacing="-1">
+    渠道失衡、货盘断档与天猫破局
+  </text>
+  
+  <!-- 副标题 -->
+  <text x="110" y="260" fill="#94A3B8" font-size="22" font-family="system-ui, -apple-system, sans-serif" font-weight="400"><tspan x="110" dy="0">家电经销商微蒸烤品类全渠道销量透视与货盘</tspan><tspan x="110" dy="20">战略调整</tspan></text>
+
+  <!-- 视觉分割线 -->
+  <line x1="110" y1="305" x2="1170" y2="305" stroke="#1E293B" stroke-width="1"/>
+
+  <!-- 底部三张核心结论微卡片 (Bento Sub-Cards) -->
+  <!-- 卡片 1: 全盘大盘 -->
+  <g transform="translate(110, 335)">
+    <rect width="326" height="270" rx="14" fill="#0A0F1D" stroke="#1E293B" stroke-width="1"/>
+    <rect x="0" y="0" width="326" height="4" rx="2" fill="#06B6D4"/>
+    <text x="24" y="38" fill="#64748B" font-size="13" font-family="system-ui, sans-serif" font-weight="600">全盘业绩总览</text>
+    <text x="24" y="85" fill="#38BDF8" font-size="44" font-family="system-ui, sans-serif" font-weight="800">365.0<tspan font-size="18" fill="#64748B" font-weight="500"> 万元</tspan></text>
+    <text x="24" y="118" fill="#94A3B8" font-size="14" font-family="system-ui, sans-serif">全渠道月总出货 <tspan fill="#F8FAFC" font-weight="700">1,554</tspan> 台</text>
+    <line x1="24" y1="140" x2="302" y2="140" stroke="#1E293B" stroke-width="1"/>
+    <text x="24" y="170" fill="#CBD5E1" font-size="14" font-family="system-ui, sans-serif" font-weight="500">• 京东系贡献近半壁江山 (48.2%)</text>
+    <text x="24" y="202" fill="#CBD5E1" font-size="14" font-family="system-ui, sans-serif" font-weight="500">• 拼多多走量迅猛占据 31.0%</text>
+    <text x="24" y="234" fill="#CBD5E1" font-size="14" font-family="system-ui, sans-serif" font-weight="500">• 综合出货均价维持 2,348 元</text>
+  </g>
+
+  <!-- 卡片 2: 天猫危机 (警示红色高亮) -->
+  <g transform="translate(476, 335)">
+    <rect width="326" height="270" rx="14" fill="#160E1B" stroke="#4C1D36" stroke-width="1.2"/>
+    <rect x="0" y="0" width="326" height="4" rx="2" fill="url(#alertGrad)"/>
+    <rect x="235" y="18" width="68" height="22" rx="11" fill="#7F1D1D" opacity="0.6"/>
+    <text x="246" y="33" fill="#FCA5A5" font-size="11" font-family="system-ui, sans-serif" font-weight="700">核心痛点</text>
+    <text x="24" y="38" fill="#F87171" font-size="13" font-family="system-ui, sans-serif" font-weight="600">天猫严重失血</text>
+    <text x="24" y="85" fill="#F43F5E" font-size="44" font-family="system-ui, sans-serif" font-weight="800">7.1%<tspan font-size="18" fill="#FDA4AF" font-weight="500"> 垫底</tspan></text>
+    <text x="24" y="118" fill="#FECDD3" font-size="14" font-family="system-ui, sans-serif">全月仅出货 111 台 / 26 万元</text>
+    <line x1="24" y1="140" x2="302" y2="140" stroke="#371726" stroke-width="1"/>
+    <text x="24" y="170" fill="#FDA4AF" font-size="14" font-family="system-ui, sans-serif" font-weight="500">• 6 款主力中 3 款销量完全交白卷</text>
+    <text x="24" y="202" fill="#FDA4AF" font-size="14" font-family="system-ui, sans-serif" font-weight="500">• 70.3% 销量完全押注单品 PY50</text>
+    <text x="24" y="234" fill="#FDA4AF" font-size="14" font-family="system-ui, sans-serif" font-weight="500">• 高端与引流两端同时塌陷</text>
+  </g>
+
+  <!-- 卡片 3: 破局方向 -->
+  <g transform="translate(842, 335)">
+    <rect width="328" height="270" rx="14" fill="#0A0F1D" stroke="#1E293B" stroke-width="1"/>
+    <rect x="0" y="0" width="328" height="4" rx="2" fill="#10B981"/>
+    <text x="24" y="38" fill="#64748B" font-size="13" font-family="system-ui, sans-serif" font-weight="600">货盘重构战略</text>
+    <text x="24" y="85" fill="#10B981" font-size="44" font-family="system-ui, sans-serif" font-weight="800">3 步破局<tspan font-size="18" fill="#64748B" font-weight="500"> 增长</tspan></text>
+    <text x="24" y="118" fill="#94A3B8" font-size="14" font-family="system-ui, sans-serif">激活天猫 30 天作战计划</text>
+    <line x1="24" y1="140" x2="304" y2="140" stroke="#1E293B" stroke-width="1"/>
+    <text x="24" y="170" fill="#CBD5E1" font-size="14" font-family="system-ui, sans-serif" font-weight="500">• 回补 DY66/DY50 补齐腰部断档</text>
+    <text x="24" y="202" fill="#CBD5E1" font-size="14" font-family="system-ui, sans-serif" font-weight="500">• 拒绝裸机比价，主推高价值套餐</text>
+    <text x="24" y="234" fill="#CBD5E1" font-size="14" font-family="system-ui, sans-serif" font-weight="500">• 激活 DY20 防守搜索带动全店</text>
+  </g>
+
+  <!-- 底部右下角标注 -->
+  <text x="1170" y="650" text-anchor="end" fill="#475569" font-size="12" font-family="system-ui, sans-serif"><tspan x="1170" dy="0">CONFIDENTIAL · 内部经营研</tspan><tspan x="1170" dy="20">判专用</tspan></text>
+</svg>

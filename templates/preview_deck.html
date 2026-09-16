@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{DECK_TITLE}} - Bento SVG Deck</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #050811;
+      color: #F8FAFC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", sans-serif;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+    header {
+      padding: 10px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0B1120;
+      border-bottom: 1px solid #1E293B;
+      z-index: 10;
+    }
+    .deck-title { font-size: 15px; font-weight: 600; color: #E2E8F0; }
+    .nav-controls { display: flex; align-items: center; gap: 10px; }
+    .btn {
+      background: #1E293B;
+      color: #94A3B8;
+      border: 1px solid #334155;
+      padding: 5px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      transition: all 0.2s;
+    }
+    .btn:hover { background: #334155; color: #FFFFFF; }
+    .btn-active { background: #0F2D3D; color: #00F2FE; border-color: #00F2FE; }
+    .page-indicator { font-size: 13px; font-weight: 600; color: #00F2FE; margin: 0 4px; }
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 16px;
+      position: relative;
+    }
+    .slide-stage {
+      width: 100%;
+      max-width: 1280px;
+      aspect-ratio: 16 / 9;
+      background: #080C14;
+      border-radius: 12px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #1E293B;
+    }
+    .slide-stage svg {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    /* 演讲者备注抽屉 (Speaker Notes Drawer) */
+    .notes-drawer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(11, 17, 32, 0.95);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid #00F2FE;
+      padding: 16px 24px;
+      transform: translateY(100%);
+      transition: transform 0.25s ease-out;
+      z-index: 20;
+      max-height: 180px;
+      overflow-y: auto;
+    }
+    .notes-drawer.open { transform: translateY(0); }
+    .notes-header { font-size: 12px; font-weight: 700; color: #00F2FE; margin-bottom: 6px; }
+    .notes-content { font-size: 13px; line-height: 1.6; color: #CBD5E1; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="deck-title">{{DECK_TITLE}}</div>
+    <div class="nav-controls">
+      <button class="btn" onclick="prevSlide()">← 上一页</button>
+      <span class="page-indicator" id="indicator">1 / 1</span>
+      <button class="btn" onclick="nextSlide()">下一页 →</button>
+      <button class="btn" id="notesBtn" onclick="toggleNotes()">演讲备注 (N)</button>
+      <button class="btn" onclick="exportCurrentSlidePNG()">导出当前高清图 (E)</button>
+      <button class="btn" onclick="toggleFullScreen()">全屏 (F)</button>
+    </div>
+  </header>
+  <main>
+    <div class="slide-stage" id="stage"></div>
+    <div class="notes-drawer" id="notesDrawer">
+      <div class="notes-header">SPEAKER NOTES · 演讲者汇报说辞与参考数据</div>
+      <div class="notes-content" id="notesText">暂无备注</div>
+    </div>
+  </main>
+
+  <script>
+    const slides = {{SLIDES_JSON}};
+    const notes = {{NOTES_JSON}};
+    let currentIndex = 0;
+    let notesVisible = false;
+
+    function renderSlide(index) {
+      if (!slides || slides.length === 0) return;
+      if (index < 0) index = 0;
+      if (index >= slides.length) index = slides.length - 1;
+      currentIndex = index;
+
+      const stage = document.getElementById("stage");
+      stage.innerHTML = slides[currentIndex];
+      document.getElementById("indicator").innerText = `${currentIndex + 1} / ${slides.length}`;
+      
+      const nText = (notes && notes[currentIndex]) ? notes[currentIndex] : "本页核心关注：结合图表与核心指标展开，强调数据背后的业务归因。";
+      document.getElementById("notesText").innerHTML = nText;
+    }
+
+    function prevSlide() { renderSlide(currentIndex - 1); }
+    function nextSlide() { renderSlide(currentIndex + 1); }
+    function toggleNotes() {
+      notesVisible = !notesVisible;
+      const drawer = document.getElementById("notesDrawer");
+      const btn = document.getElementById("notesBtn");
+      if (notesVisible) {
+        drawer.classList.add("open");
+        btn.classList.add("btn-active");
+      } else {
+        drawer.classList.remove("open");
+        btn.classList.remove("btn-active");
+      }
+    }
+    function toggleFullScreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+      } else {
+        document.exitFullscreen();
+      }
+    }
+
+    // 纯前端利用 Canvas 一键无损导出 1920x1080 高清 PNG
+    function exportCurrentSlidePNG() {
+      const svgElement = document.querySelector("#stage svg");
+      if (!svgElement) return;
+
+      const svgData = new XMLSerializer().serializeToString(svgElement);
+      const canvas = document.createElement("canvas");
+      canvas.width = 1920;
+      canvas.height = 1080;
+      const ctx = canvas.getContext("2d");
+
+      const img = new Image();
+      const svgBlob = new Blob([svgData], { type: "image/svg+xml;charset=utf-8" });
+      const url = URL.createObjectURL(svgBlob);
+
+      img.onload = function() {
+        ctx.drawImage(img, 0, 0, 1920, 1080);
+        URL.revokeObjectURL(url);
+        const a = document.createElement("a");
+        a.download = `slide_${String(currentIndex + 1).padStart(2, "0")}_1080p.png`;
+        a.href = canvas.toDataURL("image/png");
+        a.click();
+      };
+      img.src = url;
+    }
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft" || e.key === "PageUp") prevSlide();
+      if (e.key === "ArrowRight" || e.key === "PageDown" || e.key === " ") nextSlide();
+      if (e.key === "n" || e.key === "N") toggleNotes();
+      if (e.key === "e" || e.key === "E") exportCurrentSlidePNG();
+      if (e.key === "f" || e.key === "F") toggleFullScreen();
+    });
+
+    renderSlide(0);
+  </script>
+</body>
+</html>

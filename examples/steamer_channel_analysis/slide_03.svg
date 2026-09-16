@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <pattern id="dotGrid3" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#1E293B" opacity="0.6"/>
+    </pattern>
+    <linearGradient id="flagshipGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <linearGradient id="cardGrad3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#0B1120"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="1280" height="720" fill="#070C18"/>
+  <rect width="1280" height="720" fill="url(#dotGrid3)"/>
+
+  <!-- 顶部 Header -->
+  <g transform="translate(60, 35)">
+    <rect x="0" y="4" width="4" height="32" rx="2" fill="#F59E0B"/>
+    <text x="16" y="30" fill="#F8FAFC" font-size="28" font-family="system-ui, -apple-system, sans-serif" font-weight="700">
+      机型矩阵透视：单品高度集中与渠道严重偏科
+    </text>
+    <text x="16" y="58" fill="#94A3B8" font-size="14" font-family="system-ui, sans-serif"><tspan x="16" dy="0">六大机型定价 1,799~2,899 元</tspan><tspan x="16" dy="20"> · 核心利润款依赖京东，走量爆款依赖拼</tspan><tspan x="16" dy="20">多多与抖音</tspan></text>
+  </g>
+
+  <!-- Bento Grid: 上方 3 个卡片 (三款支柱机型)，下方 3 个卡片 (另外三款机型) -->
+  
+  <!-- 1. PY50 (销量冠军款 - 2299元) -->
+  <g transform="translate(60, 115)">
+    <rect width="366" height="255" rx="14" fill="url(#cardGrad3)" stroke="#1E293B" stroke-width="1"/>
+    <rect x="20" y="20" width="60" height="22" rx="4" fill="#065F46" opacity="0.7"/>
+    <text x="27" y="35" fill="#34D399" font-size="11" font-family="system-ui, sans-serif" font-weight="700">销冠单品</text>
+    <text x="90" y="37" fill="#F8FAFC" font-size="20" font-family="system-ui, sans-serif" font-weight="700">PY50</text>
+    <text x="346" y="37" text-anchor="end" fill="#94A3B8" font-size="16" font-family="system-ui, sans-serif" font-weight="600">2,299 元</text>
+
+    <!-- 核心指标 -->
+    <text x="20" y="80" fill="#34D399" font-size="34" font-family="system-ui, sans-serif" font-weight="800">387<tspan font-size="16" fill="#64748B" font-weight="500"> 台</tspan></text>
+    <text x="150" y="80" fill="#38BDF8" font-size="28" font-family="system-ui, sans-serif" font-weight="700">89.0<tspan font-size="14" fill="#64748B" font-weight="500"> 万元</tspan></text>
+    <text x="20" y="105" fill="#94A3B8" font-size="12" font-family="system-ui, sans-serif"><tspan x="20" dy="0">贡献全盘 24.9% 销量与 24.4%</tspan><tspan x="20" dy="20"> 销额</tspan></text>
+    
+    <line x1="20" y1="120" x2="346" y2="120" stroke="#1E293B" stroke-width="1"/>
+    
+    <!-- 渠道去向条形 -->
+    <text x="20" y="145" fill="#CBD5E1" font-size="13" font-family="system-ui, sans-serif">• PDD 渠道独吞：<tspan fill="#F97316" font-weight="700">260台 (67.2%)</tspan></text>
+    <text x="20" y="172" fill="#CBD5E1" font-size="13" font-family="system-ui, sans-serif">• 天猫支撑主力：<tspan fill="#38BDF8" font-weight="700">78台 (占天猫70%)</tspan></text>
+    <text x="20" y="199" fill="#CBD5E1" font-size="13" font-family="system-ui, sans-serif">• 京东自营未上架，POP 承接 47 台</text>
+    <rect x="20" y="215" width="326" height="24" rx="4" fill="#1E293B"/>
+    <text x="28" y="231" fill="#94A3B8" font-size="11" font-family="system-ui, sans-serif"><tspan x="28" dy="0">诊断：严重依赖 PDD 低价跑量，天猫唯</tspan><tspan x="28" dy="20">一顶梁柱</tspan></text>
+  </g>
+
+  <!-- 2. DY50 PRO (高毛利旗舰款 - 2899元) -->
+  <g transform="translate(456, 115)">
+    <rect width="366" height="255" rx="14" fill="url(#cardGrad3)" stroke="#B45309" stroke-width="1.2"/>
+    <rect x="20" y="20" width="60" height="22" rx="4" fill="#78350F"/>
+    <text x="27" y="35" fill="#FBBF24" font-size="11" font-family="system-ui, sans-serif" font-weight="700">旗舰利润</text>
+    <text x="90" y="37" fill="#F8FAFC" font-size="20" font-family="system-ui, sans-serif" font-weight="700">DY50 PRO</text>
+    <text x="346" y="37" text-anchor="end" fill="#FBBF24" font-size="16" font-family="system-ui, sans-serif" font-weight="700">2,899 元</text>
+
+    <!-- 核心指标 -->
+    <text x="20" y="80" fill="#FBBF24" font-size="34" font-family="system-ui, sans-serif" font-weight="800">270<tspan font-size="16" fill="#64748B" font-weight="500"> 台</tspan></text>
+    <text x="150" y="80" fill="#FBBF24" font-size="28" font-family="system-ui, sans-serif" font-weight="700">78.3<tspan font-size="14" fill="#64748B" font-weight="500"> 万元</tspan></text>
+    <text x="20" y="105" fill="#94A3B8" font-size="12" font-family="system-ui, sans-serif">全盘第二大销额支柱 · 最高毛利机型</text>
+    
+    <line x1="20" y1="120" x2="346" y2="120" stroke="#1E293B" stroke-width="1"/>
+    
+    <!-- 渠道去向条形 -->
+    <text x="20" y="145" fill="#CBD5E1" font-size="13" font-family="system-ui, sans-serif">• 京东自营基本盘：<tspan fill="#38BDF8" font-weight="700">150台 (55.6%)</tspan></text>
+    <text x="20" y="172" fill="#CBD5E1" font-size="13" font-family="system-ui, sans-serif">• PDD 意料外走量：<tspan fill="#F97316" font-weight="700">63台 (23.3%)</tspan></text>
+    <text x="20" y="199" fill="#CBD5E1" font-size="13" font-family="system-ui, sans-serif">• 天猫严重失灵：<tspan fill="#EF4444" font-weight="700">仅出货 19 台 (7.0%)</tspan></text>
+    <rect x="20" y="215" width="326" height="24" rx="4" fill="#2D1A08"/>
+    <text x="28" y="231" fill="#FBBF24" font-size="11" font-family="system-ui, sans-serif">诊断：自营高产，天猫高端用户完全未被转化</text>
+  </g>
+
+  <!-- 3. DY66 (内容爆款款 - 2499元) -->
+  <g transform="translate(852, 115)">
+    <rect width="368" height="255" rx="14" fill="url(#cardGrad3)" stroke="#1E293B" stroke-width="1"/>
+    <rect x="20" y="20" width="60" height="22" rx="4" fill="#4A044E" opacity="0.8"/>
+    <text x="27" y="35" fill="#F472B6" font-size="11" font-family="system-ui, sans-serif" font-weight="700">内容黑马</text>
+    <text x="90" y="37" fill="#F8FAFC" font-size="20" font-family="system-ui, sans-serif" font-weight="700">DY66</text>
+    <text x="348" y="37" text-anchor="end" fill="#94A3B8" font-size="16" font-family="system-ui, sans-serif" font-weight="600">2,499 元</text>
+
+    <!-- 核心指标 -->
+    <text x="20" y="80" fill="#E879F9" font-size="34" font-family="system-ui, sans-serif" font-weight="800">273<tspan font-size="16" fill="#64748B" font-weight="500"> 台</tspan></text>
+    <text x="150" y="80" fill="#38BDF8" font-size="28" font-family="system-ui, sans-serif" font-weight="700">68.2<tspan font-size="14" fill="#64748B" font-weight="500"> 万元</tspan></text>
+    <text x="20" y="105" fill="#94A3B8" font-size="12" font-family="system-ui, sans-serif">出货稳定，线上多场景主推腰部机型</text>
+    
+    <line x1="20" y1="120" x2="348" y2="120" stroke="#1E293B" stroke-width="1"/>
+    
+    <!-- 渠道去向条形 -->
+    <text x="20" y="145" fill="#CBD5E1" font-size="13" font-family="system-ui, sans-serif">• 抖音短视频打爆：<tspan fill="#F472B6" font-weight="700">144台 (52.7%)</tspan></text>
+    <text x="20" y="172" fill="#CBD5E1" font-size="13" font-family="system-ui, sans-serif">• 京东 POP 承接：<tspan fill="#38BDF8" font-weight="700">110台 (40.3%)</tspan></text>
+    <text x="20" y="199" fill="#CBD5E1" font-size="13" font-family="system-ui, sans-serif">• 天猫完全未布局：<tspan fill="#EF4444" font-weight="700">销量为 0 台</tspan></text>
+    <rect x="20" y="215" width="328" height="24" rx="4" fill="#1E293B"/>
+    <text x="28" y="231" fill="#94A3B8" font-size="11" font-family="system-ui, sans-serif">诊断：内容种草能力极强，是天猫破局首选回补款</text>
+  </g>
+
+  <!-- 4. DY50 (自营特供/主推款 - 2299元) -->
+  <g transform="translate(60, 395)">
+    <rect width="366" height="255" rx="14" fill="url(#cardGrad3)" stroke="#1E293B" stroke-width="1"/>
+    <rect x="20" y="20" width="60" height="22" rx="4" fill="#0C4A6E"/>
+    <text x="27" y="35" fill="#38BDF8" font-size="11" font-family="system-ui, sans-serif" font-weight="700">自营重器</text>
+    <text x="90" y="37" fill="#F8FAFC" font-size="20" font-family="system-ui, sans-serif" font-weight="700">DY50</text>
+    <text x="346" y="37" text-anchor="end" fill="#94A3B8" font-size="16" font-family="system-ui, sans-serif" font-weight="600">2,299 元</text>
+
+    <!-- 核心指标 -->
+    <text x="20" y="80" fill="#38BDF8" font-size="34" font-family="system-ui, sans-serif" font-weight="800">252<tspan font-size="16" fill="#64748B" font-weight="500"> 台</tspan></text>
+    <text x="150" y="80" fill="#38BDF8" font-size="28" font-family="system-ui, sans-serif" font-weight="700">57.9<tspan font-size="14" fill="#64748B" font-weight="500"> 万元</tspan></text>
+    <text x="20" y="105" fill="#94A3B8" font-size="12" font-family="system-ui, sans-serif">全网纯自营闭环主力</text>
+    
+    <line x1="20" y1="120" x2="346" y2="120" stroke="#1E293B" stroke-width="1"/>
+    
+    <text x="20" y="145" fill="#CBD5E1" font-size="13" font-family="system-ui, sans-serif">• 京东自营独揽：<tspan fill="#38BDF8" font-weight="700">200台 (79.4%)</tspan></text>
+    <text x="20" y="172" fill="#CBD5E1" font-size="13" font-family="system-ui, sans-serif">• 京东 POP 补充：<tspan fill="#38BDF8" font-weight="700">52台 (20.6%)</tspan></text>
+    <text x="20" y="199" fill="#CBD5E1" font-size="13" font-family="system-ui, sans-serif">• PDD / 天猫 / 抖音：<tspan fill="#64748B">全网 0 台</tspan></text>
+    <rect x="20" y="215" width="326" height="24" rx="4" fill="#1E293B"/>
+    <text x="28" y="231" fill="#94A3B8" font-size="11" font-family="system-ui, sans-serif">诊断：高度锁定在京东体系，外网完全隔绝</text>
+  </g>
+
+  <!-- 5. DY20 (入门引流款 - 1799元) -->
+  <g transform="translate(456, 395)">
+    <rect width="366" height="255" rx="14" fill="url(#cardGrad3)" stroke="#1E293B" stroke-width="1"/>
+    <rect x="20" y="20" width="60" height="22" rx="4" fill="#1E293B"/>
+    <text x="27" y="35" fill="#94A3B8" font-size="11" font-family="system-ui, sans-serif" font-weight="700">入门引流</text>
+    <text x="90" y="37" fill="#F8FAFC" font-size="20" font-family="system-ui, sans-serif" font-weight="700">DY20</text>
+    <text x="346" y="37" text-anchor="end" fill="#94A3B8" font-size="16" font-family="system-ui, sans-serif" font-weight="600">1,799 元</text>
+
+    <!-- 核心指标 -->
+    <text x="20" y="80" fill="#94A3B8" font-size="34" font-family="system-ui, sans-serif" font-weight="800">294<tspan font-size="16" fill="#64748B" font-weight="500"> 台</tspan></text>
+    <text x="150" y="80" fill="#38BDF8" font-size="28" font-family="system-ui, sans-serif" font-weight="700">52.9<tspan font-size="14" fill="#64748B" font-weight="500"> 万元</tspan></text>
+    <text x="20" y="105" fill="#94A3B8" font-size="12" font-family="system-ui, sans-serif">全网唯一 2000 元以下走量入门机</text>
+    
+    <line x1="20" y1="120" x2="346" y2="120" stroke="#1E293B" stroke-width="1"/>
+    
+    <text x="20" y="145" fill="#CBD5E1" font-size="13" font-family="system-ui, sans-serif">• PDD 渠道主力：<tspan fill="#F97316" font-weight="700">140台 (47.6%)</tspan></text>
+    <text x="20" y="172" fill="#CBD5E1" font-size="13" font-family="system-ui, sans-serif">• 京东自营配载：<tspan fill="#38BDF8" font-weight="700">120台 (40.8%)</tspan></text>
+    <text x="20" y="199" fill="#CBD5E1" font-size="13" font-family="system-ui, sans-serif">• 天猫仅 14 台，引流防守心智几乎归零</text>
+    <rect x="20" y="215" width="326" height="24" rx="4" fill="#1E293B"/>
+    <text x="28" y="231" fill="#94A3B8" font-size="11" font-family="system-ui, sans-serif"><tspan x="28" dy="0">诊断：天猫缺乏入门钩子，搜索进店权重持续</tspan><tspan x="28" dy="20">被削弱</tspan></text>
+  </g>
+
+  <!-- 6. Y6 (抖音专供机 - 2399元) -->
+  <g transform="translate(852, 395)">
+    <rect width="368" height="255" rx="14" fill="url(#cardGrad3)" stroke="#1E293B" stroke-width="1"/>
+    <rect x="20" y="20" width="60" height="22" rx="4" fill="#581C87"/>
+    <text x="27" y="35" fill="#D8B4FE" font-size="11" font-family="system-ui, sans-serif" font-weight="700">单点专供</text>
+    <text x="90" y="37" fill="#F8FAFC" font-size="20" font-family="system-ui, sans-serif" font-weight="700">Y6</text>
+    <text x="348" y="37" text-anchor="end" fill="#94A3B8" font-size="16" font-family="system-ui, sans-serif" font-weight="600">2,399 元</text>
+
+    <!-- 核心指标 -->
+    <text x="20" y="80" fill="#C084FC" font-size="34" font-family="system-ui, sans-serif" font-weight="800">78<tspan font-size="16" fill="#64748B" font-weight="500"> 台</tspan></text>
+    <text x="150" y="80" fill="#38BDF8" font-size="28" font-family="system-ui, sans-serif" font-weight="700">18.7<tspan font-size="14" fill="#64748B" font-weight="500"> 万元</tspan></text>
+    <text x="20" y="105" fill="#94A3B8" font-size="12" font-family="system-ui, sans-serif">典型特定闭环渠道打法机型</text>
+    
+    <line x1="20" y1="120" x2="348" y2="120" stroke="#1E293B" stroke-width="1"/>
+    
+    <text x="20" y="145" fill="#CBD5E1" font-size="13" font-family="system-ui, sans-serif">• 抖音独家包揽：<tspan fill="#E879F9" font-weight="700">78台 (100%)</tspan></text>
+    <text x="20" y="172" fill="#CBD5E1" font-size="13" font-family="system-ui, sans-serif">• 京东 / PDD / 天猫：<tspan fill="#64748B">全网无在售</tspan></text>
+    <text x="20" y="199" fill="#CBD5E1" font-size="13" font-family="system-ui, sans-serif">• 成功验证特定专供型号防比价价值</text>
+    <rect x="20" y="215" width="328" height="24" rx="4" fill="#1E293B"/>
+    <text x="28" y="231" fill="#94A3B8" font-size="11" font-family="system-ui, sans-serif">启示：专供机有效保护价格，但单渠道规模受限</text>
+  </g>
+</svg>

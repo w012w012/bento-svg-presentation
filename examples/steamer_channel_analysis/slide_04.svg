@@ -1,0 +1,213 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <!-- 1. 数字化正方形网格底纹 (Tech Grid) -->
+    <pattern id="techGrid" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M 28 0 L 0 0 0 28" fill="none" stroke="#1E293B" stroke-width="0.8" stroke-opacity="0.35"/>
+    </pattern>
+
+    <!-- 2. 核心品牌强调色 (单主色: 电光青 Cyan #00F2FE -> #0284C7) -->
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+
+    <!-- 3. 暗黑卡片表面 (微透深度质感) -->
+    <linearGradient id="cardSurface" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#111827" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#0B1120" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <!-- 4. 虚线容器专用高亮填充 -->
+    <linearGradient id="dashedCardBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0C1F2E" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#081420" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 全局深邃黑蓝底色 + Tech Grid 网格纹理 -->
+  <rect width="1280" height="720" fill="#080C14"/>
+  <rect width="1280" height="720" fill="url(#techGrid)"/>
+
+  <!-- 顶部 Header 结构 (保持克制留白与视觉锚点) -->
+  <g transform="translate(60, 40)">
+    <!-- 垂直视觉引导胶囊光标 -->
+    <rect x="0" y="2" width="4" height="28" rx="2" fill="#00F2FE"/>
+    <text x="16" y="26" fill="#FFFFFF" font-size="28" font-family="system-ui, -apple-system, sans-serif" font-weight="800" letter-spacing="-0.5">
+      天猫渠道诊断：货盘断层与单品支撑危机
+    </text>
+    <text x="16" y="52" fill="#64748B" font-size="13" font-family="system-ui, sans-serif" font-weight="500"><tspan x="16" dy="0">月销 111 台 · 占比 7.1% 垫</tspan><tspan x="16" dy="20">底 · 核心腰部缺失引发店铺流量与转化深</tspan><tspan x="16" dy="20">度失衡</tspan></text>
+  </g>
+
+  <!-- Bento 栅格主体: 左侧 3 层堆叠主卡片 + 右侧垂直贯通虚线沙箱 (经典拓扑) -->
+
+  <!-- ==================== 左侧层 1: 核心断档 (y: 120, h: 160) ==================== -->
+  <g transform="translate(60, 120)">
+    <rect width="760" height="160" rx="14" fill="url(#cardSurface)" stroke="#1E293B" stroke-width="1"/>
+    <!-- 左侧高亮边缘光条 (Left Accent Border) -->
+    <rect x="0" y="16" width="3.5" height="128" rx="1.7" fill="#00F2FE"/>
+
+    <!-- 左侧文字层 -->
+    <g transform="translate(28, 24)">
+      <!-- 胶囊小标签 -->
+      <rect width="68" height="20" rx="4" fill="#0F2D3D" stroke="#00F2FE" stroke-width="0.8" stroke-opacity="0.6"/>
+      <text x="34" y="14" text-anchor="middle" fill="#00F2FE" font-size="11" font-family="system-ui, sans-serif" font-weight="700">货盘断层</text>
+      
+      <text x="80" y="16" fill="#FFFFFF" font-size="18" font-family="system-ui, sans-serif" font-weight="700">腰部三大主力机型交白卷</text>
+      <text x="0" y="52" fill="#94A3B8" font-size="13" font-family="system-ui, sans-serif">
+        DY50、Y6、DY66 三款主流中端机在天猫销量全部为 <tspan fill="#00F2FE" font-weight="700">0 台</tspan>
+      </text>
+      <text x="0" y="78" fill="#64748B" font-size="12" font-family="system-ui, sans-serif"><tspan x="0" dy="0">2299~2499元线上黄金成交价格带完</tspan><tspan x="0" dy="20">全失守，拱手让出搜索首屏曝光</tspan></text>
+    </g>
+
+    <!-- 右侧具象微缩 Token: 3 芯片徽章 (Chips Group) -->
+    <g transform="translate(540, 42)">
+      <rect x="0" y="0" width="62" height="76" rx="8" fill="#131C2E" stroke="#1E293B" stroke-width="1"/>
+      <text x="31" y="28" text-anchor="middle" fill="#64748B" font-size="11" font-weight="600">DY50</text>
+      <text x="31" y="54" text-anchor="middle" fill="#00F2FE" font-size="18" font-weight="800">0</text>
+
+      <rect x="72" y="0" width="62" height="76" rx="8" fill="#131C2E" stroke="#1E293B" stroke-width="1"/>
+      <text x="103" y="28" text-anchor="middle" fill="#64748B" font-size="11" font-weight="600">Y6</text>
+      <text x="103" y="54" text-anchor="middle" fill="#00F2FE" font-size="18" font-weight="800">0</text>
+
+      <rect x="144" y="0" width="62" height="76" rx="8" fill="#131C2E" stroke="#00F2FE" stroke-width="1" stroke-opacity="0.8"/>
+      <text x="175" y="28" text-anchor="middle" fill="#94A3B8" font-size="11" font-weight="600">DY66</text>
+      <text x="175" y="54" text-anchor="middle" fill="#00F2FE" font-size="18" font-weight="800">0</text>
+    </g>
+  </g>
+
+  <!-- ==================== 左侧层 2: 单腿支撑 (y: 300, h: 160) ==================== -->
+  <g transform="translate(60, 300)">
+    <rect width="760" height="160" rx="14" fill="url(#cardSurface)" stroke="#1E293B" stroke-width="1"/>
+    <rect x="0" y="16" width="3.5" height="128" rx="1.7" fill="#00F2FE"/>
+
+    <!-- 左侧文字层 -->
+    <g transform="translate(28, 24)">
+      <rect width="68" height="20" rx="4" fill="#0F2D3D" stroke="#00F2FE" stroke-width="0.8" stroke-opacity="0.6"/>
+      <text x="34" y="14" text-anchor="middle" fill="#00F2FE" font-size="11" font-family="system-ui, sans-serif" font-weight="700">结构畸变</text>
+      
+      <text x="80" y="16" fill="#FFFFFF" font-size="18" font-family="system-ui, sans-serif" font-weight="700">单品依赖度达 70.3%（单腿走路）</text>
+      <text x="0" y="52" fill="#94A3B8" font-size="13" font-family="system-ui, sans-serif">
+        全店 111 台出货中，仅 <tspan fill="#FFFFFF" font-weight="700">PY50</tspan> 一款即占 78 台，店铺抗风险极度脆弱
+      </text>
+      <text x="0" y="78" fill="#64748B" font-size="12" font-family="system-ui, sans-serif"><tspan x="0" dy="0">缺乏第二梯队动销支撑，一旦核心单品受阻，</tspan><tspan x="0" dy="20">店铺大盘面临断崖风险</tspan></text>
+    </g>
+
+    <!-- 右侧微缩 Token: 占比进度卡片 -->
+    <g transform="translate(540, 48)">
+      <text x="0" y="14" fill="#64748B" font-size="11" font-weight="600">PY50 销量占比</text>
+      <text x="206" y="14" text-anchor="end" fill="#00F2FE" font-size="14" font-weight="800">70.3%</text>
+      <rect y="24" width="206" height="10" rx="5" fill="#1E293B"/>
+      <rect y="24" width="145" height="10" rx="5" fill="url(#cyanGrad)"/>
+      <text x="0" y="54" fill="#64748B" font-size="11">其余 5 款机型合计仅占 29.7%</text>
+    </g>
+  </g>
+
+  <!-- ==================== 左侧层 3: 旗舰失守 (y: 480, h: 180) ==================== -->
+  <g transform="translate(60, 480)">
+    <rect width="760" height="180" rx="14" fill="url(#cardSurface)" stroke="#1E293B" stroke-width="1"/>
+    <rect x="0" y="16" width="3.5" height="148" rx="1.7" fill="#00F2FE"/>
+
+    <!-- 左侧文字层 -->
+    <g transform="translate(28, 24)">
+      <rect width="68" height="20" rx="4" fill="#0F2D3D" stroke="#00F2FE" stroke-width="0.8" stroke-opacity="0.6"/>
+      <text x="34" y="14" text-anchor="middle" fill="#00F2FE" font-size="11" font-family="system-ui, sans-serif" font-weight="700">利润失守</text>
+      
+      <text x="80" y="16" fill="#FFFFFF" font-size="18" font-family="system-ui, sans-serif" font-weight="700">高客单旗舰 DY50 PRO 严重哑火</text>
+      <text x="0" y="52" fill="#94A3B8" font-size="13" font-family="system-ui, sans-serif">
+        2,899元顶配旗舰仅售出 <tspan fill="#00F2FE" font-weight="700">19 台</tspan>，远低于京东自营(150台)与拼多多(63台)
+      </text>
+      <text x="0" y="78" fill="#64748B" font-size="12" font-family="system-ui, sans-serif"><tspan x="0" dy="0">未吃透淘系 88VIP 家装品质换新红利</tspan><tspan x="0" dy="20">，丧失高毛利对投流的造血反哺</tspan></text>
+    </g>
+
+    <!-- 右侧微缩 Token: 发光多柱横向对比 (Mini Bar Chart) -->
+    <g transform="translate(540, 36)">
+      <!-- 自营柱 -->
+      <rect x="20" y="15" width="22" height="75" rx="3" fill="#00F2FE"/>
+      <text x="31" y="8" text-anchor="middle" fill="#00F2FE" font-size="11" font-weight="700">150</text>
+      <text x="31" y="105" text-anchor="middle" fill="#64748B" font-size="10">自营</text>
+
+      <!-- PDD柱 -->
+      <rect x="75" y="58" width="22" height="32" rx="3" fill="#0284C7"/>
+      <text x="86" y="52" text-anchor="middle" fill="#38BDF8" font-size="11" font-weight="700">63</text>
+      <text x="86" y="105" text-anchor="middle" fill="#64748B" font-size="10">PDD</text>
+
+      <!-- 天猫柱 (弱化) -->
+      <rect x="130" y="80" width="22" height="10" rx="3" fill="#334155"/>
+      <text x="141" y="74" text-anchor="middle" fill="#94A3B8" font-size="11" font-weight="700">19</text>
+      <text x="141" y="105" text-anchor="middle" fill="#00F2FE" font-size="10" font-weight="700">天猫</text>
+    </g>
+  </g>
+
+  <!-- ==================== 右侧垂直贯穿卡片: 破局沙箱 (y: 120, w: 380, h: 540) ==================== -->
+  <g transform="translate(840, 120)">
+    <!-- 虚线沙箱容器 (Dashed Perimeter Container) -->
+    <rect width="380" height="540" rx="16" fill="url(#dashedCardBg)" stroke="#00F2FE" stroke-width="1.2" stroke-dasharray="5,4"/>
+
+    <!-- 顶部微缩 Logo 图标 (六边形科技徽章) -->
+    <g transform="translate(32, 32)">
+      <polygon points="18,0 36,10 36,30 18,40 0,30 0,10" fill="#0F2D3D" stroke="#00F2FE" stroke-width="1.2"/>
+      <!-- 对勾/闪电符号 -->
+      <path d="M 10 20 L 16 26 L 26 14" fill="none" stroke="#00F2FE" stroke-width="2" stroke-linecap="round"/>
+      <text x="48" y="18" fill="#FFFFFF" font-size="18" font-family="system-ui, sans-serif" font-weight="800">天猫破局路线</text>
+      <text x="48" y="36" fill="#00F2FE" font-size="12" font-family="system-ui, sans-serif" font-weight="600" letter-spacing="1">RESTRUCTURING</text>
+    </g>
+
+    <!-- 连接虚线 (表示左侧问题映射至右侧解法) -->
+    <line x1="-20" y1="80" x2="0" y2="80" stroke="#00F2FE" stroke-width="1" stroke-dasharray="3,3" opacity="0.6"/>
+    <line x1="-20" y1="260" x2="0" y2="260" stroke="#00F2FE" stroke-width="1" stroke-dasharray="3,3" opacity="0.6"/>
+
+    <!-- 破局动作 1: 货盘回补 (Pipeline Token) -->
+    <g transform="translate(32, 105)">
+      <text x="0" y="0" fill="#00F2FE" font-size="12" font-weight="700">ACTION 01</text>
+      <text x="0" y="24" fill="#FFFFFF" font-size="15" font-weight="700">紧急回补 DY66 与 DY50</text>
+      <text x="0" y="46" fill="#94A3B8" font-size="12"><tspan x="0" dy="0">借力 DY66 全网 273 台动销势能</tspan><tspan x="0" dy="20">，承接外溢搜索，瓦解 PY50 孤军作战</tspan><tspan x="0" dy="20">格局。</tspan></text>
+      
+      <!-- 微缩流水线组件 -->
+      <g transform="translate(0, 60)">
+        <line x1="8" y1="12" x2="280" y2="12" stroke="#1E293B" stroke-width="1.5"/>
+        <circle cx="8" cy="12" r="6" fill="#00F2FE"/>
+        <text x="8" y="30" text-anchor="middle" fill="#64748B" font-size="10">选品</text>
+        <circle cx="140" cy="12" r="6" fill="#0284C7"/>
+        <text x="140" y="30" text-anchor="middle" fill="#64748B" font-size="10">上架</text>
+        <circle cx="280" cy="12" r="6" fill="#00F2FE"/>
+        <text x="280" y="30" text-anchor="middle" fill="#00F2FE" font-size="10" font-weight="700">起量</text>
+      </g>
+    </g>
+
+    <line x1="32" y1="230" x2="348" y2="230" stroke="#1E293B" stroke-width="1"/>
+
+    <!-- 破局动作 2: 场景权益套餐 -->
+    <g transform="translate(32, 255)">
+      <text x="0" y="0" fill="#00F2FE" font-size="12" font-weight="700">ACTION 02</text>
+      <text x="0" y="24" fill="#FFFFFF" font-size="15" font-weight="700">场景化权益包装 (拒打裸价)</text>
+      <text x="0" y="46" fill="#94A3B8" font-size="12"><tspan x="0" dy="0">主推“主机 + 烘焙礼盒 + 免费换新”</tspan><tspan x="0" dy="20">，构建非标溢价，彻底避开 PDD 裸机比</tspan><tspan x="0" dy="20">价。</tspan></text>
+      
+      <!-- 微缩芯片控制块 -->
+      <g transform="translate(0, 62)">
+        <rect width="90" height="24" rx="4" fill="#131C2E" stroke="#1E293B" stroke-width="1"/>
+        <text x="45" y="16" text-anchor="middle" fill="#94A3B8" font-size="10">定制烘焙礼</text>
+        
+        <rect x="100" width="90" height="24" rx="4" fill="#131C2E" stroke="#1E293B" stroke-width="1"/>
+        <text x="145" y="16" text-anchor="middle" fill="#94A3B8" font-size="10">365天换新</text>
+
+        <rect x="200" width="90" height="24" rx="4" fill="#0F2D3D" stroke="#00F2FE" stroke-width="1"/>
+        <text x="245" y="16" text-anchor="middle" fill="#00F2FE" font-size="10" font-weight="700">溢价套餐</text>
+      </g>
+    </g>
+
+    <line x1="32" y1="380" x2="348" y2="380" stroke="#1E293B" stroke-width="1"/>
+
+    <!-- 破局动作 3: 搜索防守与大促爆发 -->
+    <g transform="translate(32, 405)">
+      <text x="0" y="0" fill="#00F2FE" font-size="12" font-weight="700">ACTION 03</text>
+      <text x="0" y="24" fill="#FFFFFF" font-size="15" font-weight="700">以 DY20 重启搜索防守</text>
+      <text x="0" y="46" fill="#94A3B8" font-size="12"><tspan x="0" dy="0">以 1,799 元低门槛恢复全店进店 U</tspan><tspan x="0" dy="20">V 底座，撬动自然推荐与 88VIP 转</tspan><tspan x="0" dy="20">化。</tspan></text>
+      
+      <!-- 目标胶囊 -->
+      <rect y="64" width="316" height="28" rx="6" fill="#00F2FE" fill-opacity="0.1" stroke="#00F2FE" stroke-width="0.8"/>
+      <text x="158" y="82" text-anchor="middle" fill="#00F2FE" font-size="12" font-weight="700">
+        30 天目标：月销拉升至 260 台以上
+      </text>
+    </g>
+  </g>
+</svg>

@@ -70,6 +70,21 @@ bento-svg-presentation/
 
 ---
 
+## 兼容性与多 Agent 平台接入指南
+
+本项目基于业界通用的 **Agent Skills 标准规范（SKILL.md + Markdown SOP + 独立脚本）** 设计，**完全通用于主流的各大 AI Coding Agent 与开发环境**，无任何私有平台锁死：
+
+| Agent 平台 | 接入方式与支持情况 |
+| :--- | :--- |
+| **Hermes Agent** | **原生零配置支持**：直接克隆至 `~/.hermes/skills/productivity/bento-svg-presentation` 即可被系统自动识别与挂载。 |
+| **Claude Code (Anthropic)** | **原生支持**：直接作为 Project Memory 或放入 `.claude/skills/`，Claude 会在需要制作幻灯片时自动触发 SOP。 |
+| **Cursor / Windsurf** | **即开即用**：将本仓库加入项目或 Workspace，将 `references/bento_svg_prompt.md` 引用进 `.cursorrules`，AI 即可生成高质量 SVG。 |
+| **Codex CLI / Cline / Roo Code** | **标准适配**：作为独立工具目录引入，Agent 可直接执行 `scripts/validate_svg.py` 与 `build_deck.py`。 |
+| **Dify / Coze / FastGPT** | **知识库/工具节点**：将 `references/` 内的提示词导入为 Prompt 节点，调用 Python 代码节点执行校验与拼装。 |
+| **纯手搓 / 网页端大模型** | **Prompt 即拷即用**：直接将 `outline_prompt.md` 与 `bento_svg_prompt.md` 复制发给 Gemini 3 / Claude 3.7 / GPT-4o 即可单页生成。 |
+
+---
+
 ## 快速上手与使用工作流
 
 ### 步骤 1：金字塔大纲策划 (提问与调研)

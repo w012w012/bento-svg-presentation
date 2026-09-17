@@ -1,11 +1,11 @@
-# Bento SVG Presentation (顶级 PPT 专家流水线 2.0)
+# Bento SVG Presentation (顶级 PPT 专家流水线 2.1)
 
 > **基于便当网格（Bento Grid）与整页矢量 SVG 的高保真 AI 演示文稿生成框架与 Agent 技能库。**  
 > 告别死板模板、告别粗糙排版，生成可直接拖入 **PowerPoint 2016+ 取消组合打散编辑** 的硅谷发布会级演示文稿。
 
 ---
 
-##  致谢与开源溯源 (Special Thanks)
+## 致谢与开源溯源 (Special Thanks)
 
 本项目的核心方法论与设计哲学，源自 **Linux.do 社区顶尖 PPT 设计专家 Sandun（三顿）** 的重磅分享：
 * **核心思路出处**：[应该是目前最强的PPT Agent，附上完整思路分享 (Linux.do)](https://linux.do/t/topic/1782304)
@@ -20,27 +20,38 @@
 
 ## 为什么选择 Bento Grid + 整页矢量 SVG？
 
-| 对比维度 | 传统 python-pptx 脚本 | 市面商业 AI PPT 工具 (Web) | **Bento SVG Presentation (本项目)** |
+| 对比维度 | 传统 python-pptx 脚本 | 市面商业 AI PPT 工具 (Web) | **Bento SVG Presentation (本项目 2.1)** |
 | :--- | :--- | :--- | :--- |
 | **排版质感** | 极度死板、生硬，缺乏呼吸感 | 模版痕迹重，容易内容假大空 | **硅谷极客/Apple 发布会级 Dark Bento 风格** |
 | **可编辑性** | 原生可编辑，但调样式极度痛苦 | 封闭平台，导出常需付费或为图片 | **拖入 Office 2016+ 直接打散为原生矢量形状** |
 | **逻辑解耦** | 混在一起，模型常常顾此失彼 | 一键直出，无法人工精调 | **需求调研 ➔ 深度检索 ➔ 策划稿 ➔ 视觉稿四步解耦** |
-| **大模型生成稳定性** | 易出现坐标重叠、换行截断 | 闭源黑盒 | **单主色克制 + 文本排版自愈引擎 (`--fix`)** |
+| **微观视觉** | 纯文字项目符号列表 | 拼凑插画，逻辑割裂 | **8 大微缩几何组件 Token (流水线/芯片/图表/矩阵等)** |
+| **大模型稳定性** | 易出现坐标重叠、换行截断 | 闭源黑盒 | **单主色克制 + 词法感知排版自愈引擎 (`--fix`)** |
 
 ---
 
-## 2.0 工业级升级核心特性
+## 2.1 工业级升级核心特性
 
-在继承原作者四步专家流水线的基础上，本项目补齐了以下 4 项工业级能力：
+在继承原作者四步专家流水线的基础上，本项目经过全面工程重构与升级：
 
-1. **单主色克制原则 (Single Accent Restraint)**：
-   - 彻底废除廉价的“彩虹杂色看板”。全局锁定单核心品牌强调色（如电光青 `#00F2FE`），搭配暗夜深蓝黑底色与四级层次渐变。
-2. **拒绝纯文本卡片 (Micro-Diagram Tokens)**：
-   - 规避大模型输出纯文字列表的本能，卡片强制配置**“流水线节点 (Pipeline)”、“芯片组 (Chips)”、“微型发光柱 (Mini Chart)” 或 “拓扑沙箱”**。
-3. **SVG 排版自愈引擎 (`scripts/validate_svg.py --fix`)**：
-   - 自动检测并切分单行超长文本为符合 Office 规范的多行 `<tspan x="..." dy="...">`，彻底解决文本冲出卡片边界的顽疾。
-4. **演示播放器 2.0 (`templates/preview_deck.html`)**：
-   - 纯前端原生零外部依赖。支持全屏放映（`F`）、**展开演讲者汇报说辞抽屉（`N`）** 以及 **一键 Canvas 导出 1920×1080 顶配高清 PNG（`E`）**。
+1. **单主色基调 + 受控语义色谱 (Color System 2.1)**：
+   - 全局锁定单一高饱和度主强调色（80% 视觉焦点，如电光青 `#00F2FE` 或科技蓝 `#38BDF8`）。
+   - 规范引入 20% 受控业务语义色（危机红 `#F43F5E`、增长绿 `#10B981`、异动橙 `#F97316`），既避免了“五彩斑斓的大杂烩”，又完美满足经营分析与多维对比。
+2. **8 大微缩视觉组件积木库 (Micro-Diagram Tokens)**：
+   - 彻底打破大模型输出带有 `•` 的纯文本列表惯性。为模型预制 8 种高频参数化微缩几何 Token：
+     - **流水线节点 (Pipeline)**、**芯片徽章组 (Chips)**、**微型发光趋势图 (Mini Chart)**、**拓扑控制块 (Topology)**；
+     - **新增：核心 KPI 环比增长胶囊 (Growth Capsule)**、**紧凑环形占比仪表 (Donut Progress)**、**特性核对矩阵 (Feature Matrix)**、**阶段里程碑旗标 (Milestone Flag)**。
+3. **词法感知排版自愈引擎 (`scripts/validate_svg.py --fix`)**：
+   - 动态提取 `font-size` 自适应计算行高（`dy = round(font_size * 1.35)`），杜绝大标题换行重影；
+   - 智能识别中英文字词边界与 XML 实体保护，避免半截断词；
+   - 增加未定义 `url(#id)` 静态引用缺失检查与 Office 形状转换兼容性检测。
+4. **全功能交互播放器 2.1 (`templates/preview_deck.html`)**：
+   - 纯原生零依赖。全屏放映（`F`）、展开演讲者说辞抽屉（`N`）、Canvas 导出 1080P PNG（`E`）；
+   - **新增九宫格全景缩略图总览（`O` / `G`）**，方便快速把握全篇节奏；
+   - **新增一键复制当前页 SVG 矢量源码（`C`）**，方便快速粘入设计工具；
+   - 支持移动端与触屏设备的左右滑动翻页。
+5. **Office 2016+ 原生形状转换兼容性规范**：
+   - 梳理 Office 矢量解析器红线，指导使用内联样式与安全渐变，确保打散时 100% 转换为 Office 可编辑形状。
 
 ---
 
@@ -48,40 +59,25 @@
 
 ```text
 bento-svg-presentation/
-├── SKILL.md                          # Hermes / AI Agent 标准技能入口规范
+├── SKILL.md                          # Hermes / Claude / OpenCode 标准技能入口规范 (2.1)
 ├── references/                       # 核心设计规范与 Prompt 资产库
 │   ├── outline_prompt.md            # 阶段 1：金字塔大纲架构师 Prompt (原作者原版)
-│   ├── bento_svg_prompt.md          # 阶段 4：2.0 大师级 Bento Grid SVG 生成 Prompt
-│   ├── bento_visual_system.md       # 单主色、四级色阶与四大微缩 Token 规范
+│   ├── bento_svg_prompt.md          # 阶段 4：2.1 大师级 Bento Grid SVG 生成 Prompt
+│   ├── bento_visual_system.md       # 单主色+语义色体系与 8 大微缩 Token 规范
 │   ├── bento_grid_specs.md          # 6 大便当盒几何比例与留白规范
 │   ├── data_layout_mapping.md       # 5 大业务数据形态到 Bento 拓扑映射指南
 │   └── html_bento_alternative.md    # 备选单文件 HTML 网页版卡片规范
 ├── templates/
-│   ├── bento_defs_template.svg      # 预制标准网格底纹、渐变与发光滤镜库
-│   └── preview_deck.html            # 支持演讲备注(N)与一键导出1080P(E)的交互播放器
+│   ├── bento_defs_template.svg      # 预制标准网格底纹、渐变 (含警示/增长) 与滤镜库
+│   └── preview_deck.html            # 支持全览(O)、复制SVG(C)、备注(N)与1080P(E)的播放器
 ├── scripts/
-│   ├── validate_svg.py              # 带 --fix 文本排版自动换行自愈引擎
+│   ├── validate_svg.py              # 带 --fix 智能词法断行与引用检查的自愈引擎
 │   └── build_deck.py                # 多页 SVG 串联、备注注入与 PPTX 打包工具
 └── examples/                         # 真实实战案例 (包含家电微蒸烤全渠道经营分析)
     └── steamer_channel_analysis/
         ├── preview_deck.html
         ├── slide_01.svg ~ slide_06.svg
 ```
-
----
-
-## 兼容性与多 Agent 平台接入指南
-
-本项目基于业界通用的 **Agent Skills 标准规范（SKILL.md + Markdown SOP + 独立脚本）** 设计，**完全通用于主流的各大 AI Coding Agent 与开发环境**，无任何私有平台锁死：
-
-| Agent 平台 | 接入方式与支持情况 |
-| :--- | :--- |
-| **Hermes Agent** | **原生零配置支持**：直接克隆至 `~/.hermes/skills/productivity/bento-svg-presentation` 即可被系统自动识别与挂载。 |
-| **Claude Code (Anthropic)** | **原生支持**：直接作为 Project Memory 或放入 `.claude/skills/`，Claude 会在需要制作幻灯片时自动触发 SOP。 |
-| **Cursor / Windsurf** | **即开即用**：将本仓库加入项目或 Workspace，将 `references/bento_svg_prompt.md` 引用进 `.cursorrules`，AI 即可生成高质量 SVG。 |
-| **Codex CLI / Cline / Roo Code** | **标准适配**：作为独立工具目录引入，Agent 可直接执行 `scripts/validate_svg.py` 与 `build_deck.py`。 |
-| **Dify / Coze / FastGPT** | **知识库/工具节点**：将 `references/` 内的提示词导入为 Prompt 节点，调用 Python 代码节点执行校验与拼装。 |
-| **纯手搓 / 网页端大模型** | **Prompt 即拷即用**：直接将 `outline_prompt.md` 与 `bento_svg_prompt.md` 复制发给 Gemini 3 / Claude 3.7 / GPT-4o 即可单页生成。 |
 
 ---
 
@@ -93,9 +89,9 @@ bento-svg-presentation/
 ### 步骤 2：生成单页高保真 SVG
 加载 `references/bento_svg_prompt.md` 与 `references/bento_visual_system.md`，将每页内容转化为 `slide_01.svg`。
 
-### 步骤 3：文本排版自愈检查
+### 步骤 3：文本排版自愈与合规检查
 ```bash
-# 自动修复长文本溢出
+# 自动检测并修复长文本溢出、检查资源引用完整性
 python scripts/validate_svg.py slides/slide_01.svg --fix
 ```
 
@@ -104,10 +100,12 @@ python scripts/validate_svg.py slides/slide_01.svg --fix
 python scripts/build_deck.py --dir ./slides --title "我的高管汇报"
 ```
 打开生成的 `preview_deck.html`：
-- 按 `←` / `→`：翻页
+- 按 `←` / `→`：翻页（支持手机/触屏左右滑动）
 - 按 `F`：进入全屏播放
 - 按 `N`：呼出演讲者汇报说辞
-- 按 `E`：一键导出当前页为 1080P 高清 PNG
+- 按 `O` 或 `G`：开启九宫格全景缩略图总览
+- 按 `C`：一键复制当前页 SVG 矢量源码
+- 按 `E`：一键通过 Canvas 导出 1080P 高清 PNG
 
 ### 步骤 5：导入 PowerPoint 二次编辑
 将生成的 `.svg` 文件直接拖拽进 **Microsoft PowerPoint 2016 或更新版本**，鼠标右键点击图片选择 **“转换为形状 (Convert to Shape)”**，即可完全打散为原生 Office 形状和文本，自由二次调整！

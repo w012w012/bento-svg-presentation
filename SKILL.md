@@ -1,100 +1,88 @@
 ---
 name: bento-svg-presentation
-description: Use when designing Bento Grid PPT slides with editable SVG.
-version: 2.0.0
+description: Creates executive-ready presentation slide decks using Bento Grid layouts and editable full-page vector SVG (Office 2016+ compatible). Use when the user wants to create, design, plan, or export presentations, pitch decks, slide decks, business reviews, or technical architecture slides.
+version: 2.1.0
 author: Sandun (Methodology) & Hermes
 license: MIT
 platforms: [linux, macos, windows]
-metadata:
-  hermes:
-    tags: [ppt, presentation, slides, bento-grid, svg, gemini, office]
-    category: productivity
-    related_skills: [powerpoint, docx, web-design]
 ---
 
-# Bento SVG Presentation Skill (顶级 PPT 专家流水线 2.0)
+# Bento SVG Presentation (便当网格矢量幻灯片工作流)
 
-基于 Linux.do 顶级 PPT 设计专家（Sandun，前 1W+/页商业 PPT 定制公司策划师）总结的实战方法论。
-核心思想：**彻底摈弃死板模板与“一键生成”，将内容策划与视觉设计深度解耦，采用卡片式便当盒（Bento Grid）网格语言，生成可直接导入 Office 2016+ 无损打散编辑的整页矢量 SVG 幻灯片。**
+将非结构化业务与技术内容转化为高质感、结构化的 Bento Grid 幻灯片。
+核心理念：**策划与视觉解耦，以卡片容器承载信息，输出可直接导入 Office 2016+ 无损打散编辑的原生矢量 SVG。**
 
 ---
 
-## 核心原则：作者原版方法论为下限（Baseline）
+## 执行流水线 (SOP)
 
-在执行本技能时，**严禁自作主张删减步骤或简化流程**。作者沉淀的 4 步专家工作流是不可逾越的底线：
+必须严格遵循以下四阶段流水线，禁止跳过策划阶段直接套用模板：
+
 ```
-[用户主题输入]
+[输入主题/文档]
        │
        ▼
-【阶段 1: 需求调研与提问】 ──── 逆向提问调研背景 ──► 运用金字塔原理输出 JSON 结构大纲（数字便利贴）
+1. 需求调研与逻辑大纲 (金字塔大纲) ────► 确认受众与目标，生成 JSON 大纲
        │
        ▼
-【阶段 2: 深度事实检索】   ──── 逐页大纲定点搜索 ──► 为骨架填充真实数据与案例（推荐 Grok / 搜索接口）
+2. 定点事实与数据填充 (事实检索)   ────► 补齐关键定量指标、同比/环比与技术事实
        │
        ▼
-【阶段 3: 策划稿制作】     ──── 版式结构与视觉解耦 ──► 规划 Bento 容器权重，并显式指定右侧几何 Token
+3. 容器权重与 Token 规划 (策划稿)   ────► 选定 Bento 栅格版式，为每张卡片分配微缩视觉 Token
        │
        ▼
-【阶段 4: Bento Grid 设计】──── 单主色克制原则 ──► 注入 Tech Grid、光条与微缩 Token，输出顶级矢量 SVG
+4. SVG 渲染与排版自愈 (视觉呈现)   ────► 注入 defs 规范，输出 SVG 并执行排版自愈校验
 ```
 
----
+### 阶段 1：需求调研与大纲搭建
+1. 明确核心受众（高管汇报/技术方案/商业竞演）与演示目标。
+2. 依据 `references/outline_prompt.md` 输出金字塔原理结构的 JSON 大纲，向用户确认后方可进入下一阶段。
 
-## 2.0 升级规范：如何达到原作者案例的顶尖高级感？
+### 阶段 2：事实与数据检索
+逐页检查核心论点，确保量化数据真实可查，禁止模糊空话。
 
-### 1. 颜色克制法则（单主色原则）
-* **严禁使用彩虹杂色**！禁止在一屏中同时使用红、黄、蓝、绿等多色。
-* **单主色锁定**：全局仅允许一种高饱和度强调色（电光青 `#00F2FE`、科技蓝 `#38BDF8` 或品牌橙 `#FF6900`），其余全为暗夜蓝灰与纯白文字。
+### 阶段 3：版式映射与 Token 分配
+1. 根据每页信息形态（对比/架构/问题/路线），从 `references/data_layout_mapping.md` 和 `references/bento_grid_specs.md` 选择适配的 1280x720 拓扑容器。
+2. 为每张卡片明确分配对应的几何微缩组件（如流水线、芯片组、趋势柱、环比胶囊等）。
 
-### 2. 拒绝纯文本卡片（微缩视觉 Token）
-* 卡片内部严禁只有 `•` 文本列表。
-* 必须采用“左侧文字结论 + 右侧几何微缩组件”的平衡结构。右侧根据业务从四类 Token 中选取：
-  - **流水线节点 (Pipeline)**：3 节点连线；
-  - **芯片组 (Chips)**：底座/硬件徽章；
-  - **微型趋势图 (Mini Chart)**：带上升虚线箭头的渐变发光柱；
-  - **拓扑控制块 (Topology)**：虚线控制框。
-
-### 3. 光影与工程深度 (Depth & Elevation)
-* 必须引入 `templates/bento_defs_template.svg` 中预制的数字化正方形网格（Tech Grid）。
-* 核心卡片左侧添加 `3px` 垂直光条，外部关联系统使用虚线沙箱框。
-
----
-
-## 四阶段标准作业程序 (SOP)
-
-### 阶段 1：需求提问与大纲搭建
-1. 先反问核心诉求（受众是谁？核心目的？）。
-2. 调用 `references/outline_prompt.md` 输出金字塔原理 JSON 大纲并向用户确认。
-
-### 阶段 2：逐页深度检索
-针对确认的每一页大纲，检索客观数据与技术事实，绝不凭空捏造。
-
-### 阶段 3：策划稿制作（版式与 Token 规划）
-1. 确定每页的 Bento 栅格结构（1200x550 区域内）。
-2. **显式规划**：指定该页各卡片右侧放置何种微缩 Token（流水线/芯片/趋势柱/拓扑框）。
-
-### 阶段 4：Bento Grid 高保真 SVG 渲染
-1. 完整加载 `references/bento_svg_prompt.md` 与 `references/bento_visual_system.md`。
-2. 注入标准 `<defs>` 模板 `templates/bento_defs_template.svg`。
-3. 逐页生成 SVG 并保存为 `slide_XX.svg`。
-
----
-
-## 辅助工具库 (Scripts)
-
-1. **SVG 语法与排版校验**：
+### 阶段 4：SVG 生成与校验自愈
+1. 载入生成规范 `references/bento_svg_prompt.md` 与视觉系统 `references/bento_visual_system.md`。
+2. 注入标准预制定义 `templates/bento_defs_template.svg`。
+3. 逐页生成 `slide_XX.svg` 并执行自动校验与修复：
    ```bash
-   python scripts/validate_svg.py slide_01.svg
+   python scripts/validate_svg.py slide_01.svg --fix
    ```
-2. **多页串联本地交互播放器**：
+
+---
+
+## 核心设计铁律 (Design Invariants)
+
+1. **色彩克制系统**
+   - **主品牌色（80% 焦点）**：全局统一使用一种高饱和度主色（如电光青 `#00F2FE` 或科技蓝 `#38BDF8`），底层统一步调暗夜灰蓝 `#0F172A`。
+   - **语义辅助色（20% 受控）**：仅用于明确业务归因（警示 `#F43F5E`、增长 `#10B981`、异动 `#F97316`），严禁无语义彩虹色。
+
+2. **左右平衡与微缩视觉 Token**
+   - **严禁纯文字列表卡片**：避免在卡片中堆砌只有项目符号 `•` 的大段文本。
+   - 每张卡片必须形成“左侧语义结论 + 右侧几何微缩 Token”的双重心结构，从 `references/bento_visual_system.md` 的 8 大 Token 库中选择渲染。
+
+3. **Office 2016+ 原生打散（Convert to Shape）兼容保障**
+   - 形状均使用内联属性（`fill`、`stroke` 等），确保 Office 解析器 100% 识别。
+   - 使用两节点 `<linearGradient>` 渐变；核心图形避免依赖复杂 `<filter>`，改用多层透明度矩形营造光影与深度。
+
+---
+
+## 交付与工具链
+
+1. **排版自愈与合规校验**：
+   ```bash
+   python scripts/validate_svg.py slide_01.svg --fix
+   ```
+2. **多页串联预览器（纯前端无依赖）**：
    ```bash
    python scripts/build_deck.py --dir ./slides --title "演示文稿标题"
    ```
-   在 Hermes 桌面端直接调用：
-   ```text
-   ::preview{file="/path/to/slides/preview_deck.html"}
-   ```
-3. **打包 PPTX**：
+   - 快捷键：`←` / `→` 翻页（或触屏滑动）、`F` 全屏放映、`N` 演讲备注、`O` 九宫格全景、`C` 复制单页 SVG 源码、`E` 导出 1080P PNG。
+3. **打包 PPTX 演示文稿**：
    ```bash
    python scripts/build_deck.py --dir ./slides --pptx output.pptx
    ```

@@ -8,6 +8,13 @@ import glob
 import json
 import argparse
 
+if sys.platform == "win32":
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+        sys.stderr.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
+
 def build_html_preview(slides_dir, output_html, title, notes_list=None):
     svg_files = sorted(glob.glob(os.path.join(slides_dir, "*.svg")))
     if not svg_files:

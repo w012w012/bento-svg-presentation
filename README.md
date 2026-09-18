@@ -95,20 +95,21 @@ bento-svg-presentation/
 python scripts/validate_svg.py slides/slide_01.svg --fix
 ```
 
-### 步骤 4：串联本地全屏交互演示器
+### 步骤 4：构建交付 HTML 播放器与 PPTX 文件
 ```bash
 python scripts/build_deck.py --dir ./slides --title "我的高管汇报"
 ```
-打开生成的 `preview_deck.html`：
-- 按 `←` / `→`：翻页（支持手机/触屏左右滑动）
-- 按 `F`：进入全屏播放
-- 按 `N`：呼出演讲者汇报说辞
-- 按 `O` 或 `G`：开启九宫格全景缩略图总览
-- 按 `C`：一键复制当前页 SVG 矢量源码
-- 按 `E`：一键通过 Canvas 导出 1080P 高清 PNG
-
-### 步骤 5：导入 PowerPoint 二次编辑
-将生成的 `.svg` 文件直接拖拽进 **Microsoft PowerPoint 2016 或更新版本**，鼠标右键点击图片选择 **“转换为形状 (Convert to Shape)”**，即可完全打散为原生 Office 形状和文本，自由二次调整！
+执行后将自动在该目录下生成两大核心交付物：
+1. **`preview_deck.html`**：纯前端无依赖交互演示播放器
+   - 按 `←` / `→`：翻页（支持手机/触屏左右滑动）
+   - 按 `F`：进入全屏播放
+   - 按 `N`：呼出演讲者汇报说辞
+   - 按 `O` 或 `G`：开启九宫格全景缩略图总览
+   - 按 `C`：一键复制当前页 SVG 矢量源码
+   - 按 `E`：一键通过 Canvas 导出 1080P 高清 PNG
+2. **`presentation.pptx`**：原生矢量演示文稿
+   - 内嵌 1080P 预览画面，全平台打开均不乱码、不丢样式；
+   - 深度内嵌原生 `image/svg+xml` 矢量数据，在 **PowerPoint 2016+ / 365** 中选中页面直接鼠标右键点击 **“转换为形状 (Convert to Shape)”**，即可完全打散为原生 Office 形状和文本，自由二次调整！
 
 ---
 
